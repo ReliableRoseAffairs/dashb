@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/line-awesome.min.css">
+    <link rel="stylesheet" href="pro.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="fixed">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <img src="img/logo.svg" alt="">
+                    </div>
+                    <h4>Omar ui</h4>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <h6>main</h6>
+                    <li class="active">
+                        <a href="#">
+                            <span> <i class="las la-tachometer-alt"></i> dashboard </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-inbox"></i> orders </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-chart-pie"></i> analytics </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-tasks"></i> categories </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-archive"></i> collections </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-tags"></i> products </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-percentage"></i> discount </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-users"></i> employees </span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!--regular nav-->
+        <div class="main">
+            <nav class="upper navbar">
+                <div class="right">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="las la-bars"></i>
+                    </button>
+                    <div class="search">
+                        <input type="search" name="" placeholder="Search" id="">
+                        <button>
+                            <i class="las la-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="admin">
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="las la-bell"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="las la-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="las la-cog"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="profile">
+                                    <img src="img/hero.jpg" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!--content-->
+            
+                                 <section>
+       <div class="profile-section">
+        <div id="profileInfo">
+                   <p><strong>Name:</strong> <span id="profileName">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="profileEmail">Loading...</span></p>
+            <p><strong>Phone:</strong> <span id="profilePhone">Loading...</span></p>
+            <p><strong>Balance:</strong> $<span id="profileBalance">0.00</span></p>
+            <p><strong>Last Login:</strong> <span id="profileLastLogin">Loading...</span></p>
+        </div>
+</section>
+<br>
+    <a href="edit-profile.html" class="link">Edit /Change </a>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext("2d");
+
+        var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#00d8c0');
+        gradientStroke.addColorStop(1, '#ff6a72');
+
+        var gradientFill = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientFill.addColorStop(0, "rgba(0, 216, 192, 0.10)");
+        gradientFill.addColorStop(1, "rgba(255, 106, 114, 0.10)");
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL"],
+                datasets: [{
+                    label: "Data",
+                    borderColor: gradientStroke,
+                    pointBorderColor: gradientStroke,
+                    pointBackgroundColor: gradientStroke,
+                    pointHoverBackgroundColor: gradientStroke,
+                    pointHoverBorderColor: gradientStroke,
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 2,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 3,
+                    fill: true,
+                    backgroundColor: gradientFill,
+                    borderWidth: 2,
+                    data: [50, 150, 200, 270, 320, 470, 500]
+                }]
+            },
+            options: {
+                legend: {
+                    position: "bottom"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "grey",
+                            fontStyle: "bold",
+                            beginAtZero: true,
+                            maxTicksLimit: 5,
+                            padding: 20
+                        },
+                        gridLines: {
+                            drawTicks: false,
+                            display: false
+                        }
+
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            zeroLineColor: "transparent"
+                        },
+                        ticks: {
+                            padding: 20,
+                            fontColor: "grey",
+                            fontStyle: "bold"
+                        }
+                    }]
+                }
+            }
+        });
+
+        var pieData = {
+            labels: ["RETURNS", "SALES", "DISCOUNTS"],
+            datasets: [{
+                data: [320, 500, 230],
+                backgroundColor: ["#e53759", "#1676b7", "#d69d19"],
+                hoverBackgroundColor: ["#ce2143", "#0c6099", "#bc8612"]
+            }]
+        };
+        var options = {
+            segmentShowStroke: false,
+            animateScale: true,
+            responsive: true,
+            legend: {
+                display: true,
+                position: "bottom"
+            },
+
+        };
+        var gas2 = document.getElementById("pie").getContext("2d");
+        new Chart(gas2, {
+            type: "pie",
+            data: pieData,
+            options: options
+        });
+    </script>
+       <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+     <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAtVvPjdsj84mWqaG4-7SyjbljCnslZ1SM",
+  authDomain: "hendaa-1.firebaseapp.com",
+  databaseURL: "https://hendaa-1-default-rtdb.firebaseio.com",
+  projectId: "hendaa-1",
+  storageBucket: "hendaa-1.appspot.com",
+  messagingSenderId: "831134776479",
+  appId: "1:831134776479:web:56cd7098fc69cd70a376aa"
+};
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        function getUserProfile() {
+            const user = firebase.auth().currentUser;
+            if (user) {
+                const userId = user.uid;
+                db.collection('users').doc(userId).get().then(doc => {
+                    if (doc.exists) {
+                        const data = doc.data();
+                        document.getElementById('profileName').textContent = data.name;
+                        document.getElementById('profileEmail').textContent = user.email;
+                        document.getElementById('profilePhone').textContent = data.phone || 'N/A';
+                        document.getElementById('profileBalance').textContent = data.balance.toFixed(2);
+                        document.getElementById('profileLastLogin').textContent = user.metadata.lastSignInTime;
+
+                        document.getElementById('editName').value = data.name;
+                        document.getElementById('editEmail').value = user.email;
+                        document.getElementById('editPhone').value = data.phone || '';
+                    } else {
+                        console.error('No such document!');
+                    }
+                }).catch(error => {
+                    console.error('Error getting document:', error);
+                });
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+
+        
+
+
+
+firebase.auth().onAuthStateChanged(user => {
+if (user) {
+    getUserProfile();
+} else {
+    window.location.href = 'login.html';
+}
+});
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boongrowth Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/line-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="fixed">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                    <h4 id="userNameDisplay"></h4>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <h6>main</h6>
+                    <li class="active">
+                        <a href="#">
+                            <span> <i class="las la-tachometer-alt"></i> dashboard </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="deposit.html">
+                            <span> <i class="las la-inbox"></i> Deposit</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="withdraw.html">
+                            <span> <i class="las la-chart-pie"></i> Withdraw </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span> <i class="las la-tasks"></i> Plans</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="invest.html">
+                            <span> <i class="las la-archive"></i> Invest</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="acct.html">
+                            <span> <i class="las la-tags"></i> Settings </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="transactions-list.html">
+                            <span> <i class="las la-percentage"></i> Transaction History</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="acct.html">
+                            <span> <i class="las la-users"></i> Account</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!--regular nav-->
+        <div class="main">
+            <nav class="upper navbar">
+                <div class="right">
+                  
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="las la-bars"></i>
+                    </button>
+                    <div class="search">
+                      <p id="userNameDisplay2" style="color: #111; margin:10px;"></p>
+                        <button>
+                          
+                        </button>
+                    </div>
+                </div>
+
+                <div class="admin">
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="las la-bell"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="las la-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="settings.html">
+                                <i class="las la-cog"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <div class="profile">
+                                    <img src="img/logo2.png" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!--content-->
+            <div class="content">
+                <div class="wrap">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                            <div class="row">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <div class="child">
+                                        <h6> <i class="las la-users"></i> Total Balance</h6>
+                                        <div class="details">
+                                            <h4 id="balance-display">$0.00</h4>
+
+                                            <span class="status up">
+                                                <i class="las la-arrow-up"></i>
+                                                5.54%
+                                            </span>
+                                            <p>Since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <div class="child">
+                                        <h6> <i class="las la-tasks"></i> Total Deposit</h6>
+                                        <div class="details">
+                                            <h4 id="balance-display2">$0.00</h4>
+
+                                            <span class="status down">
+                     
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <div class="child">
+                                        <h6> <i class="las la-wallet"></i>Total Earning</h6>
+                                        <div class="details">
+                                            <h4>$ 0.00</h4>
+
+                                            <span class="status down">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <div class="child">
+                                        <h6> <i class="las la-chart-pie"></i> Bonus</h6>
+                                        <div class="details">
+                                            <h4>$0.00</h4>
+
+                                            <span class="status up">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 chart">
+                            <div class="child">
+                                <h6>
+                                    <span>
+                                        <i class="las la-chart-bar"></i>
+                                        year chart
+                                    </span>
+                                    <i class="las la-ellipsis-v"></i>
+                                </h6>
+                                <div class="line-chart">
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--second row-->
+                <div class="row sec-row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                        <div class="child tableWrap">
+                            <h6>
+                                Transaction History
+
+                                <span>
+                                    export
+                                    <i class="las la-cloud-download-alt"></i>
+                                </span>
+                            </h6>
+                                  
+					
+					<div class="row">
+  <div class="col-sm-12">
+    <div class="table">
+      <div class="table">
+        <div class="table" id="">
+          <table class="table table table-hover table-center mb-0" id="transaction-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th class="text-center">Status</th>
+              </tr>
+            </thead>
+            <tbody id="transaction-list">
+              <!-- Transaction rows will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+                    </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext("2d");
+
+        var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#00d8c0');
+        gradientStroke.addColorStop(1, '#ff6a72');
+
+        var gradientFill = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientFill.addColorStop(0, "rgba(0, 216, 192, 0.10)");
+        gradientFill.addColorStop(1, "rgba(255, 106, 114, 0.10)");
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL"],
+                datasets: [{
+                    label: "Data",
+                    borderColor: gradientStroke,
+                    pointBorderColor: gradientStroke,
+                    pointBackgroundColor: gradientStroke,
+                    pointHoverBackgroundColor: gradientStroke,
+                    pointHoverBorderColor: gradientStroke,
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 2,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 3,
+                    fill: true,
+                    backgroundColor: gradientFill,
+                    borderWidth: 2,
+                    data: [50, 150, 200, 270, 320, 470, 500]
+                }]
+            },
+            options: {
+                legend: {
+                    position: "bottom"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "grey",
+                            fontStyle: "bold",
+                            beginAtZero: true,
+                            maxTicksLimit: 5,
+                            padding: 20
+                        },
+                        gridLines: {
+                            drawTicks: false,
+                            display: false
+                        }
+
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            zeroLineColor: "transparent"
+                        },
+                        ticks: {
+                            padding: 20,
+                            fontColor: "grey",
+                            fontStyle: "bold"
+                        }
+                    }]
+                }
+            }
+        });
+
+        var pieData = {
+            labels: ["RETURNS", "SALES", "DISCOUNTS"],
+            datasets: [{
+                data: [320, 500, 230],
+                backgroundColor: ["#e53759", "#1676b7", "#d69d19"],
+                hoverBackgroundColor: ["#ce2143", "#0c6099", "#bc8612"]
+            }]
+        };
+        var options = {
+            segmentShowStroke: false,
+            animateScale: true,
+            responsive: true,
+            legend: {
+                display: true,
+                position: "bottom"
+            },
+
+        };
+        var gas2 = document.getElementById("pie").getContext("2d");
+        new Chart(gas2, {
+            type: "pie",
+            data: pieData,
+            options: options
+        });
+    </script>
+
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+    const firebaseConfig = {
+  apiKey: "AIzaSyAtVvPjdsj84mWqaG4-7SyjbljCnslZ1SM",
+  authDomain: "hendaa-1.firebaseapp.com",
+  databaseURL: "https://hendaa-1-default-rtdb.firebaseio.com",
+  projectId: "hendaa-1",
+  storageBucket: "hendaa-1.appspot.com",
+  messagingSenderId: "831134776479",
+  appId: "1:831134776479:web:56cd7098fc69cd70a376aa"
+};
+firebase.initializeApp(firebaseConfig);
+       const auth = firebase.auth();
+        const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true });
+
+        // Function to display user balance
+        function displayBalance() {
+            // Check if the user is authenticated
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    // User is signed in
+                    const userId = user.uid;
+                    const userRef = db.collection('users').doc(userId);
+
+                    // Retrieve user balance from Firestore
+                    userRef.get().then((doc) => {
+                        if (doc.exists) {
+                            const balance = doc.data().balance;
+                            document.getElementById('balance-display').innerText = `$ ${balance}`;                           document.getElementById('balance-display2').innerText = `$ ${balance}`;
+                        } else {
+                            console.log("No such document!");
+                        }
+                    }).catch((error) => {
+                        console.error("Error getting user document:", error);
+                    });
+                } else {
+                    // User is not signed in
+                    console.log("User is not signed in.");
+                }
+            });
+        }
+
+        // Function to handle user logout
+        function logout() {
+            auth.signOut().then(() => {
+                console.log("User signed out");
+                // Redirect the user to the login page after sign-out
+                window.location.href = "login.html";
+            }).catch((error) => {
+                console.error("Error signing out:", error);
+            });
+        }
+        
+
+
+        // Function to display user email
+function displayUserEmail() {
+    // Check if the user is authenticated
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            // User is signed in
+            const userEmail = user.email;
+            document.getElementById('user-email').innerText = userEmail;
+        } else {
+            // User is not signed in
+            console.log("User is not signed in.");
+        }
+    });
+}
+function getCurrentUserName() {
+            // Assuming you have a collection named 'users' and a document with the current user's ID
+            const currentUserID = firebase.auth().currentUser.uid;
+
+            // Reference to the document containing user data
+            const userRef = db.collection('users').doc(currentUserID);
+
+            // Fetch the document
+            userRef.get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        // Get the user's name from the document data
+                        const userName = doc.data().name;
+
+                        // Display the user's name on the dashboard
+                        document.getElementById('userNameDisplay').innerText = "Welcome, " + userName + "!";
+                        document.getElementById('userNameDisplay2').innerText = "Welcome, " + userName + "!";
+                    } else {
+                        console.log("No such document!");
+                    }
+                })
+                .catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+        }
+
+        // Listen for authentication state changes
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // If user is logged in, call the function to display the current user's name
+                getCurrentUserName();
+            } else {
+                // If user is not logged in, redirect to the login page or handle as needed
+                window.location.replace("login.html");
+            }
+        });
+      
+function displayTransactionHistory() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            db.collection("transactions").where("userId", "==", user.uid).get().then((querySnapshot) => {
+                const transactionTable = document.getElementById("transaction-table");
+                const transactionList = document.getElementById("transaction-list");
+                transactionList.innerHTML = ""; // Clear previous data
+
+                querySnapshot.forEach((doc) => {
+                    const transaction = doc.data();
+                    const statusClass = transaction.status === 'Approved' ? 'success' :
+                                transaction.status === 'Pending' ? 'warning' :
+                                (transaction.status === 'Decline' || transaction.status === 'Reject') ? 'danger' : '';
+
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${transaction.type}</td>
+                        <td>$${transaction.amount}</td>
+                   
+                        
+      <td class="text-center">
+                <span class="badge badge-pill bg-${transaction.status === 'Approved' ? 'success' : 'warning'} inv-badge">${transaction.status}</span>
+              </td>
+                        
+                        
+                    `;
+                    transactionList.appendChild(row);
+                });
+            }).catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+        } else {
+            // Redirect to login page if no user is signed in
+            window.location.href = "login.html";
+        }
+    });
+}
+
+
+// Call the function to display user balance and transaction history
+displayBalance();
+displayTransactionHistory();
+displayUserEmail();
+// Add event listener to the logout button
+        document.getElementById('logout-btn').addEventListener('click', logout);
+    </script>
+</body>
+
+</html>

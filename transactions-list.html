@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/transactions-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:52 GMT -->
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Boongrowth/Transactions</title>
+		
+		<!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
+		
+		<!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+		
+		<!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="asset/css/font-awesome.min.css">
+		
+		<!-- Feathericon CSS -->
+        <link rel="stylesheet" href="asset/css/feathericon.min.css">
+		
+		<!-- Datatables CSS -->
+		<link rel="stylesheet" href="asset/plugins/datatables/datatables.min.css">
+		
+		<!-- Main CSS -->
+        <link rel="stylesheet" href="asset/css/style.css">
+		
+		<!--[if lt IE 9]>
+			<script src="asset/js/html5shiv.min.js"></script>
+			<script src="asset/js/respond.min.js"></script>
+		<![endif]-->
+    </head>
+    <body>
+	
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Header -->
+            <div class="header">
+			
+				<!-- Logo -->
+                <div class="header-left">
+                    <a href="index.html" class="logo">
+						<img src="asset/img/profile/user.svg" alt="Logo">
+					</a>
+					<a href="index.html" class="logo logo-small">
+						<img src="img/logo.png" alt="Logo" width="30" height="30">
+					</a>
+                </div>
+				<!-- /Logo -->
+				
+				<a href="javascript:void(0);" id="toggle_btn">
+					<i class="fe fe-text-align-left"></i>
+				</a>
+				
+				<div class="top-nav-search">
+					<form>
+						<input type="text" class="form-control" placeholder="Search here">
+						<button class="btn" type="submit"><i class="fa fa-search"></i></button>
+					</form>
+				</div>
+				
+				<!-- Mobile Menu Toggle -->
+				<a class="mobile_btn" id="mobile_btn">
+					<i class="fa fa-bars"></i>
+				</a>
+				<!-- /Mobile Menu Toggle -->
+				
+				<!-- Header Right Menu -->
+				<ul class="nav user-menu">
+
+					<!-- Notifications -->
+					<li class="nav-item dropdown noti-dropdown">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<i class="fe fe-bell"></i> <span class="badge badge-pill">3</span>
+						</a>
+						<div class="dropdown-menu notifications">
+							<div class="topnav-dropdown-header">
+								<span class="notification-title">Notifications</span>
+								<a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="notification-message">
+							
+												
+								</ul>
+							</div>
+							<div class="topnav-dropdown-footer">
+								<a href="#">View all Notifications</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+					
+					<!-- User Menu -->
+					<li class="nav-item dropdown has-arrow">
+						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+							<span class="user-img"><img class="rounded-circle" src="asset/img/profiles/user.svg" width="31" alt="Ryan Taylor"></span>
+						</a>
+						<div class="dropdown-menu">
+							<div class="user-header">
+								<div class="avatar avatar-sm">
+									<img src="asset/img/profiles/User.svg" alt="User Image" class="avatar-img rounded-circle">
+								</div>
+								<div class="user-text">
+									<h6 id="profileName">Loading ...</h6>
+									<p class="text-muted mb-0">Investor</p>
+								</div>
+							</div>
+							<a class="dropdown-item" href="profile.html">My Profile</a>
+							<a class="dropdown-item" href="settings.html">Settings</a>
+							<a class="dropdown-item" href="#" id="logout-btn">Logout</a>
+						</div>
+					</li>
+					<!-- /User Menu -->
+					
+				</ul>
+				<!-- /Header Right Menu -->
+				
+            </div>
+			<!-- /Header -->
+			
+			<!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+					<div id="sidebar-menu" class="sidebar-menu">
+						<ul>
+							<li class="menu-title"> 
+								<span>Main</span>
+							</li>
+							<li> 
+								<a href="dashboard.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+							</li>
+							<li> 
+								<a href="deposit.html"><i class="fe fe-layout"></i> <span>Deposit</span></a>
+							</li>
+							<li> 
+								<a href="withdraw.html"><i class="fe fe-users"></i> <span>Withdraw</span></a>
+							</li>
+							<li> 
+								<a href="invest.html"><i class="fe fe-user-plus"></i> <span>Invest</span></a>
+							</li>
+							<li> 
+								<a href="plans.html"><i class="fe fe-user"></i> <span>Plans</span></a>
+							</li>
+							<li> 
+								<a href="transactions-list.html"><i class="fe fe-star-o"></i> <span>Transactions</span></a>
+							</li>
+							<li class="active"> 
+								<a href="settings.html"><i class="fe fe-activity"></i> <span>Settings</span></a>
+							</li>
+							<li> 
+								<a href="acct.html"><i class="fe fe-vector"></i> <span>Profile</span></a>
+							</li>
+
+						</ul>
+					</div>
+                </div>
+            </div>
+			<!-- /Sidebar -->
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+				
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row">
+							<div class="col-sm-12">
+								<h3 class="page-title">Transactions</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+									<li class="breadcrumb-item active">Transactions</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+					
+					
+					<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="table-responsive" id="">
+          <table class="datatable table table-hover table-center mb-0" id="transaction-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Amount</th>
+                <th class="text-center">Status</th>
+              </tr>
+            </thead>
+            <tbody id="transaction-list">
+              <!-- Transaction rows will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+					
+
+						</div>			
+					</div>
+				</div>			
+			</div>
+			<!-- /Page Wrapper -->
+		
+		<!-- Delete Modal -->
+			<div class="modal fade" id="delete_modal" aria-hidden="true" role="dialog">
+				<div class="modal-dialog modal-dialog-centered" role="document" >
+					<div class="modal-content">
+					<!--	<div class="modal-header">
+							<h5 class="modal-title">Delete</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>-->
+						<div class="modal-body">
+							<div class="form-content p-2">
+								<h4 class="modal-title">Delete</h4>
+								<p class="mb-4">Are you sure want to delete?</p>
+								<button type="button" class="btn btn-primary">Save </button>
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Delete Modal -->
+		
+        </div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+		
+			   
+        <script src="asset/js/jquery-3.2.1.min.js"></script>
+		
+		<!-- Bootstrap Core JS -->
+        <script src="asset/js/popper.min.js"></script>
+        <script src="asset/js/bootstrap.min.js"></script>
+		
+		<!-- Slimscroll JS -->
+        <script src="asset/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		
+		<!-- Datatables JS -->
+		<script src="asset/plugins/datatables/jquery.dataTables.min.js"></script>
+		<script src="asset/plugins/datatables/datatables.min.js"></script>
+		
+		<!-- Custom JS -->
+		<script  src="asset/js/script.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+       var firebaseConfig = {
+  apiKey: "AIzaSyAtVvPjdsj84mWqaG4-7SyjbljCnslZ1SM",
+  authDomain: "hendaa-1.firebaseapp.com",
+  databaseURL: "https://hendaa-1-default-rtdb.firebaseio.com",
+  projectId: "hendaa-1",
+  storageBucket: "hendaa-1.appspot.com",
+  messagingSenderId: "831134776479",
+  appId: "1:831134776479:web:56cd7098fc69cd70a376aa"
+};
+        firebase.initializeApp(firebaseConfig);
+        
+        // Initialize Firebase services
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        db.settings({ timestampsInSnapshots: true });
+
+        // Function to display user balance
+        function displayBalance() {
+            // Check if the user is authenticated
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    // User is signed in
+                    const userId = user.uid;
+                    const userRef = db.collection('users').doc(userId);
+
+                    // Retrieve user balance from Firestore
+                    userRef.get().then((doc) => {
+                        if (doc.exists) {
+                            const balance = doc.data().balance;
+                            document.getElementById('balance-display').innerText = `$ ${balance}`;
+                        } else {
+                            console.log("No such document!");
+                        }
+                    }).catch((error) => {
+                        console.error("Error getting user document:", error);
+                    });
+                } else {
+                    // User is not signed in
+                    console.log("User is not signed in.");
+                }
+            });
+        }
+
+        // Function to handle user logout
+        function logout() {
+            auth.signOut().then(() => {
+                console.log("User signed out");
+                // Redirect the user to the login page after sign-out
+                window.location.href = "login.html";
+            }).catch((error) => {
+                console.error("Error signing out:", error);
+            });
+        }
+        
+
+
+
+        // Function to display user email
+function displayUserEmail() {
+    // Check if the user is authenticated
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            // User is signed in
+            const userEmail = user.email;
+            document.getElementById('user-email').innerText = userEmail;
+        } else {
+            // User is not signed in
+            console.log("User is not signed in.");
+        }
+    });
+}
+function getCurrentUserName() {
+            // Assuming you have a collection named 'users' and a document with the current user's ID
+            const currentUserID = firebase.auth().currentUser.uid;
+
+            // Reference to the document containing user data
+            const userRef = db.collection('users').doc(currentUserID);
+
+            // Fetch the document
+            userRef.get()
+                .then((doc) => {
+                    if (doc.exists) {
+                        // Get the user's name from the document data
+                        const userName = doc.data().name;
+
+                        // Display the user's name on the dashboard
+                        document.getElementById('userNameDisplay').innerText = "Welcome, " + userName + "!";
+                    } else {
+                        console.log("No such document!");
+                    }
+                })
+                .catch((error) => {
+                    console.log("Error getting document:", error);
+                });
+        }
+
+        // Listen for authentication state changes
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // If user is logged in, call the function to display the current user's name
+                getCurrentUserName();
+            } else {
+                // If user is not logged in, redirect to the login page or handle as needed
+                window.location.replace("login.html");
+            }
+        });
+
+// Call the function to display user email
+
+function displayTransactionHistory() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            db.collection("transactions").where("userId", "==", user.uid).get().then((querySnapshot) => {
+                const transactionTable = document.getElementById("transaction-table");
+                const transactionList = document.getElementById("transaction-list");
+                transactionList.innerHTML = ""; // Clear previous data
+
+                querySnapshot.forEach((doc) => {
+                    const transaction = doc.data();
+                    const statusClass = transaction.status === 'Approved' ? 'success' :
+                                transaction.status === 'Pending' ? 'warning' :
+                                (transaction.status === 'Decline' || transaction.status === 'Reject') ? 'danger' : '';
+
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${transaction.type}</td>
+                        <td>$${transaction.amount}</td>
+                   
+                        
+      <td class="text-center">
+                <span class="badge badge-pill bg-${transaction.status === 'Approved' ? 'success' : 'warning'} inv-badge">${transaction.status}</span>
+              </td>
+                        
+                        
+                    `;
+                    transactionList.appendChild(row);
+                });
+            }).catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+        } else {
+            // Redirect to login page if no user is signed in
+            window.location.href = "login.html";
+        }
+    });
+}
+function getUserProfile() {
+            const user = firebase.auth().currentUser;
+            if (user) {
+                const userId = user.uid;
+                db.collection('users').doc(userId).get().then(doc => {
+                    if (doc.exists) {
+                        const data = doc.data();
+                        document.getElementById('profileName').textContent = data.name;
+                                                document.getElementById('profileName2').textContent = data.name;
+                                                document.getElementById('profileName3').textContent = data.name;
+                        document.getElementById('profileEmail').textContent = user.email;
+                        document.getElementById('profileEmail2').textContent = user.email;
+                        document.getElementById('profilePhone').textContent = data.phone || 'N/A';
+                        document.getElementById('profileBalance').textContent = data.balance.toFixed(2);
+                        document.getElementById('profileLastLogin').textContent = user.metadata.lastSignInTime;
+
+                        document.getElementById('editName').value = data.name;
+                        document.getElementById('editEmail').value = user.email;
+                        document.getElementById('editPhone').value = data.phone || '';
+                    } else {
+                        console.error('No such document!');
+                    }
+                }).catch(error => {
+                    console.error('Error getting document:', error);
+                });
+            } else {
+                window.location.href = 'login.html';
+            }
+        }
+firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                getUserProfile();
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+// Call the function to display user balance and transaction history
+displayBalance();
+displayTransactionHistory();
+displayUserEmail();
+// Add event listener to the logout button
+        document.getElementById('logout-btn').addEventListener('click', logout);
+    </script>
+		
+    </body>
+
+<!-- Mirrored from dreamguys.co.in/demo/doccure/admin/transactions-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Nov 2019 04:12:53 GMT -->
+</html>
