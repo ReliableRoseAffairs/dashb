@@ -1,0 +1,135 @@
+header .profile-icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 36px; /* Increase icon size */
+            color: #fff;
+        }
+
+h1 {
+  margin: 0;
+  color: #fff;
+  line-height: 1.5;
+  
+}
+#profileName {
+  color: #111;
+}
+#profileEmail {
+  color: #111;
+}
+#profilePhone {
+  color: #111;
+}
+#profileBalance {
+  color: #111;
+  
+}
+#profileLastLogin {
+  color: #111;
+}
+p {
+  color: #111;
+  line-height: 1.5;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+main {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.profile-section {
+  background-color: #fff;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 20px;
+  width
+  box-shadow: 0 0 10px; #1d1f38;
+}
+
+.profile-section h2 {
+  color: #007;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: ;
+}
+input[type="password"],
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #007;
+  border-radius: 5px;
+}
+textarea {
+  resize: vertical;
+}
+button {
+  background-color: #007;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.link {
+  background: #fff;
+  color: #001041;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-right: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+ .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Light gray background color */
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    z-index: 1000; /* Ensure the navigation is on top of other content */
+  }
+
+  /* Bottom navigation item style */
+  .nav-item {
+    text-align: center;
+    flex-grow: 1;
+    padding: 5px 0;
+    color: #00045a; /* Default color for icons */
+    text-decoration: none;
+  }
+
+  /* Bottom navigation item icon style */
+  .nav-item i {
+    font-size: 24px; /* Adjust icon size as needed */
+  }
+
+  /* Active item style */
+  .active {
+    color: #007bff; /* Blue color for active item */
+  }
