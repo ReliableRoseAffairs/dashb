@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/line-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+
+    .account_deposit {
+      padding: 20px;
+      background-color: #fff;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .col-lg-6 {
+      flex: 1 1 calc(50% - 20px);
+      display: flex;
+    }
+    .planbox {
+      background-color: #007bff;
+      border-radius: 8px;
+      color: #fff;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .planbox:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .planleft, .planright {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .planleft {
+      background-color: #0056b3;
+      flex: 1;
+    }
+    .planright {
+      background-color: #003d80;
+      flex: 1;
+    }
+    .percentwrap {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .percent {
+      font-size: 48px;
+      font-weight: bold;
+    }
+    .daily {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .hourly {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .planname {
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: auto;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    ul li span {
+      font-weight: bold;
+    }
+    .select-button {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .select-button input[type="radio"] {
+      display: none;
+    }
+    .select-button label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      color: #333;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .select-button input[type="radio"]:checked + label {
+      background-color: #ff9900;
+      color: #fff;
+    }
+    .investment-form {
+      display: none;
+      margin-top: 20px;
+    }
+    .investment-form input[type="number"] {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+    .investment-form button {
+      padding: 10px 20px;
+      border-radius: 4px;
+      border: none;
+      background-color: #28a745;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .investment-form button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+   <div class="wrapper">
+        <nav id="sidebar">
+            <div class="fixed">
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="">
+                    </div>
+                    <h4 id="userNameDisplay"></h4>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <h6>main</h6>
+                    <li class="active">
+                        <a href="#">
+                            <span> <i class="las la-tachometer-alt"></i> dashboard </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="deposit.html">
+                            <span> <i class="las la-inbox"></i> Deposit</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="withdraw.html">
+                            <span> <i class="las la-chart-pie"></i> Withdraw </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="investments.html">
+                            <span> <i class="las la-tasks"></i> Plans</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="invest.html">
+                            <span> <i class="las la-archive"></i> Invest</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="edit-profile.html">
+                            <span> <i class="las la-tags"></i> Settings </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="transactions-list.html">
+                            <span> <i class="las la-percentage"></i> Transaction History</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="profile.html">
+                            <span> <i class="las la-users"></i> Account</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="logout-btn">
+                            <span> <i class="las la-users"></i> Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--regular nav-->
+        <div class="main">
+            <nav class="upper navbar">
+                <div class="right">
+                  
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="las la-bars"></i>
+                    </button>
+                    <div class="search">
+                      <p id="userNameDisplay2" style="color: #111; margin:10px;"></p>
+                        <button>
+                          
+                        </button>
+                    </div>
+                </div>
+
+                <div class="admin">
+                    <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="notification.html">
+                                <i class="las la-bell"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="account.html">
+                                <i class="las la-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="edit-profile.html">
+                                <i class="las la-cog"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">
+                                <div class="profile">
+                                    <img src="img/logo2.png" alt="" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        <!--regular nav-->
+
+
+            <!--content-->
+
+                               <section class="account_deposit">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="planbox classic">
+        <div class="planleft">
+          <div class="percentwrap">
+            <div class="percent">5<span>%</span></div>
+            <div class="daily">Daily <span>for 1-7 Days</span></div>
+          </div>
+          <div class="hourly">0.20% <span>HOURLY</span></div>
+          <div class="planname">Beginner</div>
+        </div>
+        <div class="planright">
+          <ul>
+            <li>Instant Withdrawals</li>
+            <li>Duration: <span>1-7 days</span></li>
+            <li>Minimum: <span>$10</span></li>
+            <li>Maximum: <span>$500</span></li>
+          </ul>
+        </div>
+        <section class="select-button">
+      
+          <input type="radio" name="h_id" value='1' id="r1" onclick="redirectToinvest()">          
+          <label class="radio" for="r1">Click To Invest</label>
+        </section>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="planbox premium">
+        <div class="planleft">
+          <div class="percentwrap">
+            <div class="percent">8<span>%</span></div>
+            <div class="daily">Daily <span>for 7-14 Days</span></div>
+          </div>
+          <div class="hourly">0.30% <span>HOURLY</span></div>
+            <div class="planname">Regular</div>
+          </div>
+          <div class="planright">
+            <ul>
+              <li>Instant Withdrawals</li>
+              <li>Duration: <span>7-14 Days </span></li>
+              <li>Minimum: <span>$50</span></li>
+              <li>Maximum: <span>$1000</span></li>
+            </ul>
+          </div>
+          <section class="select-button">
+            <input type="radio" name="h_id" value='2' id="r2" onclick="redirectToinvest()">
+            <label class="radio" for="r2">Click To Invest</label>
+          </section>
+        </div>
+      </div>
+
+          <div class="col-lg-6">
+      <div class="planbox premium">
+        <div class="planleft">
+          <div class="percentwrap">
+            <div class="percent">12<span>%</span></div>
+            <div class="daily">Weekly <span>for 14-21 Days</span></div>
+          </div>
+          <div class="hourly">0.15% <span>Daily</span></div>
+            <div class="planname">Classic</div>
+          </div>
+          <div class="planright">
+            <ul>
+              <li>Instant Withdrawals</li>
+              <li>Duration: <span>14-21 Days</span></li>
+              <li>Minimum: <span>$100</span></li>
+              <li>Maximum: <span>$1500</span></li>
+            </ul>
+          </div>
+          <section class="select-button">
+            <input type="radio" name="h_id" value='3' id="r3" onclick="redirectToinvest()">
+            <label class="radio" for="r3">Click To Invest</label>
+          </section>
+        </div>
+      </div>
+      
+          <div class="col-lg-6">
+      <div class="planbox premium">
+        <div class="planleft">
+          <div class="percentwrap">
+            <div class="percent">15<span>%</span></div>
+            <div class="daily">Month<span>for 21-30 Days</span></div>
+          </div>
+          <div class="hourly">0.12% <span>Daily</span></div>
+            <div class="planname">Premium</div>
+          </div>
+          <div class="planright">
+            <ul>
+              <li>Instant Withdrawals</li>
+              <li>Duration: <span>21-30, Days</span></li>
+              <li>Minimum: <span>$200</span></li>
+              <li>Maximum: <span>Unlimited</span></li>
+            </ul>
+          </div>
+          <section class="select-button">
+            <input type="radio" name="h_id" value='4' id="r4" onclick="redirectToinvest()">
+            <label class="radio" for="r4">Click To Invest</label>
+          </section>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext("2d");
+
+        var gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientStroke.addColorStop(0, '#00d8c0');
+        gradientStroke.addColorStop(1, '#ff6a72');
+
+        var gradientFill = ctx.createLinearGradient(500, 0, 100, 0);
+        gradientFill.addColorStop(0, "rgba(0, 216, 192, 0.10)");
+        gradientFill.addColorStop(1, "rgba(255, 106, 114, 0.10)");
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL"],
+                datasets: [{
+                    label: "Data",
+                    borderColor: gradientStroke,
+                    pointBorderColor: gradientStroke,
+                    pointBackgroundColor: gradientStroke,
+                    pointHoverBackgroundColor: gradientStroke,
+                    pointHoverBorderColor: gradientStroke,
+                    pointBorderWidth: 2,
+                    pointHoverRadius: 2,
+                    pointHoverBorderWidth: 1,
+                    pointRadius: 3,
+                    fill: true,
+                    backgroundColor: gradientFill,
+                    borderWidth: 2,
+                    data: [50, 150, 200, 270, 320, 470, 500]
+                }]
+            },
+            options: {
+                legend: {
+                    position: "bottom"
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "grey",
+                            fontStyle: "bold",
+                            beginAtZero: true,
+                            maxTicksLimit: 5,
+                            padding: 20
+                        },
+                        gridLines: {
+                            drawTicks: false,
+                            display: false
+                        }
+
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            zeroLineColor: "transparent"
+                        },
+                        ticks: {
+                            padding: 20,
+                            fontColor: "grey",
+                            fontStyle: "bold"
+                        }
+                    }]
+                }
+            }
+        });
+
+        var pieData = {
+            labels: ["RETURNS", "SALES", "DISCOUNTS"],
+            datasets: [{
+                data: [320, 500, 230],
+                backgroundColor: ["#e53759", "#1676b7", "#d69d19"],
+                hoverBackgroundColor: ["#ce2143", "#0c6099", "#bc8612"]
+            }]
+        };
+        var options = {
+            segmentShowStroke: false,
+            animateScale: true,
+            responsive: true,
+            legend: {
+                display: true,
+                position: "bottom"
+            },
+
+        };
+        var gas2 = document.getElementById("pie").getContext("2d");
+        new Chart(gas2, {
+            type: "pie",
+            data: pieData,
+            options: options
+        });
+    </script>
+<script src="radio.js"></script>
+
+</body>
+
+</html>
