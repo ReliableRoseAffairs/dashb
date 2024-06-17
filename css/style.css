@@ -415,3 +415,90 @@ a[data-toggle="collapse"] {
   background-color: #4CAF50;
   color: gold;
 }
+
+.content {
+    max-width: 350px;
+    margin: auto;
+}
+
+.card {
+    background: #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  
+    background-color: #f1f1f1;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-weight: bolder;
+}
+
+.table th {
+    background: #f4f4f9;
+
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.bg-success {
+    background: #186EFC;
+    font-weight: bolder;
+}
+
+.bg-warning {
+    background: #EE4E24;
+}
+
+.bg-danger {
+    background: red;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 0;
+        overflow: hidden;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
