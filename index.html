@@ -42,7 +42,7 @@
                     </li>
 
                     <li>
-                        <a href="investments.html">
+                        <a href="plans.html">
                             <span> <i class="las la-tasks"></i> Plans</span>
                         </a>
                     </li>
@@ -70,12 +70,11 @@
                             <span> <i class="las la-users"></i> Account</span>
                         </a>
                     </li>
-			                    <li>
+                    <li>
                         <a href="#" id="logout-btn">
                             <span> <i class="las la-users"></i> Logout</span>
                         </a>
-					    </li>
-
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -435,47 +434,47 @@ function getCurrentUserName() {
                 getCurrentUserName();
             } else {
                 // If user is not logged in, redirect to the login page or handle as needed
-                window.location.replace("login.html");
+                window.location.replace("lum.html");
             }
         });
       
 function displayTransactionHistory() {
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            db.collection("transactions").where("userId", "==", user.uid).get().then((querySnapshot) => {
-                const transactionTable = document.getElementById("transaction-table");
-                const transactionList = document.getElementById("transaction-list");
-                transactionList.innerHTML = ""; // Clear previous data
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    db.collection('transactions').where('userId', '==', user.uid).get().then((querySnapshot) => {
+                        const transactionList = document.getElementById('transaction-list');
+                        transactionList.innerHTML = ''; // Clear previous data
+                        if (querySnapshot.empty) {
+                            const noRecordRow = document.createElement('tr');
+                            noRecordRow.innerHTML = `<td colspan="3" style="text-align: center;">No record found</td>`;
+                            transactionList.appendChild(noRecordRow);
+                        } else {
+                            querySnapshot.forEach((doc) => {
+                                const transaction = doc.data();
+                                const statusClass = transaction.status === 'Approved' ? 'bg-success' :
+                                    transaction.status === 'Pending' ? 'bg-warning' :
+                                    (transaction.status === 'Decline' || transaction.status === 'Reject') ? 'bg-danger' : '';
 
-                querySnapshot.forEach((doc) => {
-                    const transaction = doc.data();
-                    const statusClass = transaction.status === 'Approved' ? 'success' :
-                                transaction.status === 'Pending' ? 'warning' :
-                                (transaction.status === 'Decline' || transaction.status === 'Reject') ? 'danger' : '';
-
-                    const row = document.createElement("tr");
-                    row.innerHTML = `
-                        <td>${transaction.type}</td>
-                        <td>$${transaction.amount}</td>
-                   
-                        
-      <td class="text-center">
-                <span class="badge badge-pill bg-${transaction.status === 'Approved' ? 'success' : 'warning'} inv-badge">${transaction.status}</span>
-              </td>
-                        
-                        
-                    `;
-                    transactionList.appendChild(row);
-                });
-            }).catch((error) => {
-                console.log("Error getting documents: ", error);
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                    <td>${transaction.type}</td>
+                                    <td>$${transaction.amount}</td>
+                                    <td class="text-center">
+                                        <span class="badge ${statusClass}">${transaction.status}</span>
+                                    </td>
+                                `;
+                                transactionList.appendChild(row);
+                            });
+                        }
+                    }).catch((error) => {
+                        console.log('Error getting documents: ', error);
+                    });
+                } else {
+                    // Redirect to login page if no user is signed in
+                    window.location.href = 'login.html';
+                }
             });
-        } else {
-            // Redirect to login page if no user is signed in
-            window.location.href = "login.html";
         }
-    });
-}
 
 
 // Call the function to display user balance and transaction history
@@ -485,6 +484,7 @@ displayUserEmail();
 // Add event listener to the logout button
         document.getElementById('logout-btn').addEventListener('click', logout);
     </script>
+    <script src="radio.js"></script>
 </body>
 
 </html>
